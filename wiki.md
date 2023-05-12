@@ -21,6 +21,9 @@ Output:
 SELECT id, name FROM users JOIN orders ON users.id = orders.user_id WHERE age > 18 GROUP BY age ORDER BY name ASC
 ```
 
+
+** Request **
+===================
 ```php
 // Récupère la méthode HTTP utilisée pour la requête
 
