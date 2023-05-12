@@ -5,8 +5,13 @@ namespace App;
 
 class QueryBuilder
 {
+    /**
+     * @var stdClass<array>
+     */
     private $query;
-
+    /**
+     * QueryBuilder constructor.
+     */
     public function __construct()
     {
         $this->query = new stdClass();
@@ -16,22 +21,22 @@ class QueryBuilder
         $this->query->join = [];
         $this->query->groupBy = [];
         $this->query->orderBy = [];
-        // Ajoutez d'autres propriétés nécessaires pour les autres clauses SQL
+
     }
 
-    public function select(...$columns)
+    public function select(...$columns): self
     {
         $this->query->select = array_merge($this->query->select, $columns);
         return $this;
     }
 
-    public function from($table)
+    public function from($table): self
     {
         $this->query->from = $table;
         return $this;
     }
 
-    public function where($column, $operator, $value)
+    public function where($column, $operator, $value): self
     {
         $this->query->where[] = [$column, $operator, $value];
         return $this;
@@ -43,19 +48,19 @@ class QueryBuilder
         return $this;
     }
 
-    public function orderBy($column, $direction = 'ASC')
+    public function orderBy($column, $direction = 'ASC'): self
     {
         $this->query->orderBy[] = [$column, $direction];
         return $this;
     }
 
-    public function groupBy(...$columns)
+    public function groupBy(...$columns): self
     {
         $this->query->groupBy = array_merge($this->query->groupBy, $columns);
         return $this;
     }
 
-    public function build()
+    public function build(): string
     {
         $sql = "SELECT " . implode(", ", $this->query->select);
         $sql .= " FROM " . $this->query->from;
@@ -88,7 +93,7 @@ class QueryBuilder
             $sql .= implode(", ", $orders);
         }
 
-        // Ajoutez la logique pour les autres clauses SQL
+
 
         return $sql;
     }
