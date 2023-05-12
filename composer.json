@@ -1,0 +1,22 @@
+{
+    "name": "ben/laboratoire",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bensaadmucret",
+            "email": "bensaadmucret@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^6.2",
+        "phpunit/phpunit": "^10.0",
+        "twig/twig": "^3.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.9"
+    }
+}

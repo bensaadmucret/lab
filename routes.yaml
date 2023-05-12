@@ -1,0 +1,21 @@
+# routes.yaml
+home:
+  path: /
+  method: GET
+  controller: App\Controller\HomeController::index
+about:
+  path: /about
+  method: GET
+  controller: App\Controller\AboutController::index
+create_post:
+  path: /posts
+  method: POST
+  controller: App\Controller\PostController::create
+update_post:
+  path: /posts/{id}
+  method: PUT
+  controller: App\Controller\PostController::update
+delete_post:
+  path: /posts/{id}
+  method: DELETE
+  controller: App\Controller\PostController::delete
