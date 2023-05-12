@@ -94,20 +94,3 @@ final class Request {
     }
 }
 
-// Récupère la méthode HTTP utilisée pour la requête
-$method = Request::getMethod();
-
-// Récupère le chemin de l'URL de la requête
-$path = Request::getPath();
-
-// Récupère les paramètres de requête GET
-$queryParams = Request::getQueryParams();
-
-// Récupère les données postées dans la requête
-$postData = Request::getPostData();
-
-// Récupère les en-têtes de la requête
-$headers = Request::getHeaders();
-
-// Récupère les cookies de la requête
-$cookies = Request::getCookies();
