@@ -1,4 +1,5 @@
-
+** Query Builder **
+===================
 ```php
 $queryBuilder = new QueryBuilder();
 
