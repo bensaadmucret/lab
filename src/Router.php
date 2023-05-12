@@ -61,7 +61,6 @@ final class Router
 
         if (!$match) {
             ErrorController::error404();
-           // echo 'Route not found';
             exit;
         }
 
