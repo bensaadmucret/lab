@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App;
 
-class QueryBuilder
+
+final class QueryBuilder
 {
     /**
      * @var stdClass<array>
@@ -92,8 +93,6 @@ class QueryBuilder
             }
             $sql .= implode(", ", $orders);
         }
-
-
 
         return $sql;
     }
